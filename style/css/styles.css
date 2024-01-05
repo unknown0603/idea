@@ -1,0 +1,153 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f8c8dc;
+}
+
+/* Position the "No" button absolutely within body */
+#noButton {
+  position: absolute;
+  margin-left: 150px;
+  transition: 0.5s;
+  /* Smooth movement */
+}
+
+#yesButton {
+  position: absolute;
+  margin-right: 150px;
+  /* Smooth movement */
+}
+
+.header_text {
+  font-family: "Nunito";
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: 20px;
+  /* optional: adds some space between the buttons */
+}
+
+.btn {
+  background-color: #ffb6c1;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #faf9f6;
+}
+
+.gif_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.top-left-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 300px;
+  max-height: 300px;
+}
+
+/* ... Your existing styles ... */
+
+/* Updated styles for disclaimer button and popup */
+.disclaimer-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #528ff1;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.disclaimer-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.disclaimer-popup p {
+  margin-top: 45px;
+  font-size: 20px;
+}
+
+.disclaimer-popup button {
+  background-color: #4285f4;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Animation for the popup */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Apply the animation to the popup */
+.disclaimer-popup.show {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Styling for close button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #777;
+  font-size: 20px;
+  cursor: pointer;
+}

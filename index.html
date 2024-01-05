@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="./style/css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <button class="disclaimer-btn" onclick="showDisclaimer()">
+        Click Here
+      </button>
+      <div class="overlay" id="overlay"></div>
+      <div class="disclaimer-popup" id="disclaimerPopup">
+        <p>
+          I'm going to ask you in person obviously haha. I just made this for
+          fun so that you have something to remember for the future :)
+        </p>
+        <button class="close-btn" onclick="hideDisclaimer()">Close</button>
+      </div>
+      <img src="./style/images/child.png" alt="Bob" class="top-left-image" />
+      <div>
+        <h1 class="header_text">Hi Aarohi! Do you want to be my girlfriend?</h1>
+      </div>
+      <div class="gif_container">
+        <img
+          src="https://media.tenor.com/JL0YrycH2gkAAAAj/peach-goma-crate-orange.gif"
+          alt="Cute animated illustration"
+        />
+      </div>
+      <div class="buttons">
+        <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
+        <button class="btn" id="noButton" onmouseover="moveButton()">No</button>
+        <script>
+          function nextPage() {
+            window.location.href = "yes.html";
+          }
+
+          function moveButton() {
+            var x =
+              Math.random() *
+              (window.innerWidth -
+                document.getElementById("noButton").offsetWidth);
+            var y =
+              Math.random() *
+              (window.innerHeight -
+                document.getElementById("noButton").offsetHeight);
+            document.getElementById("noButton").style.left = `${x}px`;
+            document.getElementById("noButton").style.top = `${y}px`;
+          }
+
+          function showDisclaimer() {
+            document.getElementById("overlay").style.display = "block";
+            document.getElementById("disclaimerPopup").style.display = "block";
+          }
+
+          function hideDisclaimer() {
+            document.getElementById("overlay").style.display = "none";
+            document.getElementById("disclaimerPopup").style.display = "none";
+          }
+        </script>
+      </div>
+    </div>
+  </body>
+</html>
